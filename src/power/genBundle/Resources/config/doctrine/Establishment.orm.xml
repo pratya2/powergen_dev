@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="power\genBundle\Entity\Establishment" table="establishment">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="address" type="text" column="address" nullable="true"/>
+    <field name="lane" type="text" column="lane" nullable="true"/>
+    <field name="street" type="text" column="street" nullable="true"/>
+    <field name="village" type="bigint" column="village" nullable="true"/>
+    <field name="subdistrict" type="bigint" column="subdistrict" nullable="true"/>
+    <field name="district" type="bigint" column="district" nullable="true"/>
+    <field name="province" type="bigint" column="province" nullable="true"/>
+    <field name="region" type="bigint" column="region" nullable="true"/>
+    <field name="poscode" type="string" column="poscode" length="5" nullable="true"/>
+    <field name="telNumber" type="string" column="tel_number" length="100" nullable="true"/>
+    <field name="faxNumber" type="string" column="fax_number" length="100" nullable="true"/>
+    <field name="lat" type="float" column="lat" nullable="true"/>
+    <field name="lng" type="float" column="lng" nullable="true"/>
+    <field name="location" type="bigint" column="location" nullable="true"/>
+    <field name="idnumber" type="string" column="idnumber" length="100" nullable="true"/>
+    
+    <many-to-one field="owner" target-entity="Owner" inversed-by="establishments">
+       <join-column name="owner_id" referenced-column-name="id" />
+    </many-to-one>
+    
+    <one-to-many field="transactions" target-entity="Transaction" mapped-by="establishment" />
+    
+    <one-to-many field="powerengines" target-entity="Powerengine" mapped-by="establishment_powerengine" />
+    
+  </entity>
+</doctrine-mapping>

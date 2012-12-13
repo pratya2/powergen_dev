@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="power\genBundle\Entity\Owner" table="owner">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="registerDate" type="date" column="register_date" nullable="true"/>
+    <field name="registerNumber" type="string" column="register_number" length="100" nullable="true"/>
+    <field name="birthDay" type="date" column="birth_day" nullable="true"/>
+    <field name="nationality" type="string" column="nationality" length="100" nullable="true"/>
+    <field name="idCard" type="integer" column="id_card" nullable="true"/>
+    <field name="districtOfIssue" type="string" column="district_of_issue" length="100" nullable="true"/>
+    <field name="proviceOfIssue" type="string" column="provice_of_issue" length="100" nullable="true"/>
+    <field name="adressNumber" type="string" column="adress_number" length="20" nullable="true"/>
+    <field name="lane" type="string" column="lane" length="20" nullable="true"/>
+    <field name="street" type="string" column="street" length="50" nullable="true"/>
+    <field name="villageNumber" type="string" column="village_number" length="20" nullable="true"/>
+    <field name="subDistrict" type="integer" column="sub_district" nullable="true"/>
+    <field name="district" type="integer" column="district" nullable="true"/>
+    <field name="province" type="integer" column="province" nullable="true"/>
+    <field name="poscode" type="string" column="poscode" length="5" nullable="true"/>
+    <field name="telNumber" type="string" column="tel_number" length="100" nullable="true"/>
+    <field name="faxNumber" type="string" column="fax_number" length="100" nullable="true"/>
+    <field name="iscorp" type="boolean" column="isCorp" nullable="true"/>
+    <field name="mobilePhone" type="string" column="mobile_phone" length="20" nullable="true"/>
+    <field name="website" type="string" column="website" length="100" nullable="true"/>
+    <field name="email" type="string" column="email" length="50" nullable="true"/>
+   
+    <many-to-one field="ownertype" target-entity="Ownertype" inversed-by="owners">
+       <join-column name="owner_type_id" referenced-column-name="id" />
+    </many-to-one>
+    
+    <one-to-many field="establishments" target-entity="Establishment" mapped-by="owner" />
+    
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,85 @@
+<h1>Transaction</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Powerhouseid</th>
+            <td>{{ entity.powerhouseId }}</td>
+        </tr>
+        <tr>
+            <th>Transactiondate</th>
+            <td>{{ entity.transactionDate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Businesstype</th>
+            <td>{{ entity.businessType }}</td>
+        </tr>
+        <tr>
+            <th>Transactioncompletedate</th>
+            <td>{{ entity.transactionCompleteDate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Transactionverifydate</th>
+            <td>{{ entity.transactionVerifyDate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Iscertificate</th>
+            <td>{{ entity.iscertificate }}</td>
+        </tr>
+        <tr>
+            <th>Isproxy</th>
+            <td>{{ entity.isproxy }}</td>
+        </tr>
+        <tr>
+            <th>Isidcard</th>
+            <td>{{ entity.isidcard }}</td>
+        </tr>
+        <tr>
+            <th>Ismap</th>
+            <td>{{ entity.ismap }}</td>
+        </tr>
+        <tr>
+            <th>Ischartlocation</th>
+            <td>{{ entity.ischartlocation }}</td>
+        </tr>
+        <tr>
+            <th>Ischartcapacity</th>
+            <td>{{ entity.ischartcapacity }}</td>
+        </tr>
+        <tr>
+            <th>Ispower</th>
+            <td>{{ entity.ispower }}</td>
+        </tr>
+        <tr>
+            <th>Islatlong</th>
+            <td>{{ entity.islatlong }}</td>
+        </tr>
+        <tr>
+            <th>Islicense</th>
+            <td>{{ entity.islicense }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('transaction') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('transaction_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('transaction_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

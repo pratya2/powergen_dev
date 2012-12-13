@@ -1,0 +1,93 @@
+<h1>Establishment</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{ entity.address }}</td>
+        </tr>
+        <tr>
+            <th>Lane</th>
+            <td>{{ entity.lane }}</td>
+        </tr>
+        <tr>
+            <th>Street</th>
+            <td>{{ entity.street }}</td>
+        </tr>
+        <tr>
+            <th>Village</th>
+            <td>{{ entity.village }}</td>
+        </tr>
+        <tr>
+            <th>Subdistrict</th>
+            <td>{{ entity.subdistrict }}</td>
+        </tr>
+        <tr>
+            <th>District</th>
+            <td>{{ entity.district }}</td>
+        </tr>
+        <tr>
+            <th>Province</th>
+            <td>{{ entity.province }}</td>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <td>{{ entity.region }}</td>
+        </tr>
+        <tr>
+            <th>Poscode</th>
+            <td>{{ entity.poscode }}</td>
+        </tr>
+        <tr>
+            <th>Telnumber</th>
+            <td>{{ entity.telNumber }}</td>
+        </tr>
+        <tr>
+            <th>Faxnumber</th>
+            <td>{{ entity.faxNumber }}</td>
+        </tr>
+        <tr>
+            <th>Lat</th>
+            <td>{{ entity.lat }}</td>
+        </tr>
+        <tr>
+            <th>Lng</th>
+            <td>{{ entity.lng }}</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>{{ entity.location }}</td>
+        </tr>
+        <tr>
+            <th>Idnumber</th>
+            <td>{{ entity.idnumber }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('establishment') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('establishment_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('establishment_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

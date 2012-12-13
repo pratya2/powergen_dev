@@ -1,0 +1,30 @@
+establishment:
+    pattern:  /
+    defaults: { _controller: "powergenBundle:Establishment:index" }
+
+establishment_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "powergenBundle:Establishment:show" }
+
+establishment_new:
+    pattern:  /new
+    defaults: { _controller: "powergenBundle:Establishment:new" }
+
+establishment_create:
+    pattern:  /create
+    defaults: { _controller: "powergenBundle:Establishment:create" }
+    requirements: { _method: post }
+
+establishment_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "powergenBundle:Establishment:edit" }
+
+establishment_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "powergenBundle:Establishment:update" }
+    requirements: { _method: post }
+
+establishment_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "powergenBundle:Establishment:delete" }
+    requirements: { _method: post }

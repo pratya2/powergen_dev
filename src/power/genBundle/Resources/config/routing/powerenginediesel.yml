@@ -1,0 +1,30 @@
+powerenginediesel:
+    pattern:  /
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:index" }
+
+powerenginediesel_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:show" }
+
+powerenginediesel_new:
+    pattern:  /new
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:new" }
+
+powerenginediesel_create:
+    pattern:  /create
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:create" }
+    requirements: { _method: post }
+
+powerenginediesel_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:edit" }
+
+powerenginediesel_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:update" }
+    requirements: { _method: post }
+
+powerenginediesel_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "powergenBundle:PowerengineDiesel:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,30 @@
+owner:
+    pattern:  /
+    defaults: { _controller: "powergenBundle:Owner:index" }
+
+owner_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "powergenBundle:Owner:show" }
+
+owner_new:
+    pattern:  /new
+    defaults: { _controller: "powergenBundle:Owner:new" }
+
+owner_create:
+    pattern:  /create
+    defaults: { _controller: "powergenBundle:Owner:create" }
+    requirements: { _method: post }
+
+owner_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "powergenBundle:Owner:edit" }
+
+owner_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "powergenBundle:Owner:update" }
+    requirements: { _method: post }
+
+owner_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "powergenBundle:Owner:delete" }
+    requirements: { _method: post }

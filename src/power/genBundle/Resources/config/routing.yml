@@ -1,0 +1,19 @@
+powergenBundle_owner:
+        resource: "@powergenBundle/Resources/config/routing/owner.yml"
+        prefix:   /owner
+        
+powergenBundle_establishment:
+        resource: "@powergenBundle/Resources/config/routing/establishment.yml"
+        prefix:   /establishment
+
+powergenBundle_transaction:
+        resource: "@powergenBundle/Resources/config/routing/transaction.yml"
+        prefix:   /transaction
+
+powergenBundle_powerengine:
+        resource: "@powergenBundle/Resources/config/routing/powerengine.yml"
+        prefix:   /powerengine
+
+powergenBundle_powerenginediesel:
+        resource: "@powergenBundle/Resources/config/routing/powerenginediesel.yml"
+        prefix:   /powerenginediesel

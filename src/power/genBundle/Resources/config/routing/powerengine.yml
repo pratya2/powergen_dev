@@ -1,0 +1,30 @@
+powerengine:
+    pattern:  /
+    defaults: { _controller: "powergenBundle:Powerengine:index" }
+
+powerengine_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "powergenBundle:Powerengine:show" }
+
+powerengine_new:
+    pattern:  /new
+    defaults: { _controller: "powergenBundle:Powerengine:new" }
+
+powerengine_create:
+    pattern:  /create
+    defaults: { _controller: "powergenBundle:Powerengine:create" }
+    requirements: { _method: post }
+
+powerengine_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "powergenBundle:Powerengine:edit" }
+
+powerengine_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "powergenBundle:Powerengine:update" }
+    requirements: { _method: post }
+
+powerengine_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "powergenBundle:Powerengine:delete" }
+    requirements: { _method: post }

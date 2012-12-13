@@ -1,0 +1,63 @@
+<h1>Transaction list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Powerhouseid</th>
+            <th>Transactiondate</th>
+            <th>Businesstype</th>
+            <th>Transactioncompletedate</th>
+            <th>Transactionverifydate</th>
+            <th>Iscertificate</th>
+            <th>Isproxy</th>
+            <th>Isidcard</th>
+            <th>Ismap</th>
+            <th>Ischartlocation</th>
+            <th>Ischartcapacity</th>
+            <th>Ispower</th>
+            <th>Islatlong</th>
+            <th>Islicense</th>
+            <th>Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('transaction_show', { 'id': entity.id }) }}">{{ entity.powerhouseId }}</a></td>
+            <td>{% if entity.transactionDate %}{{ entity.transactionDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.businessType }}</td>
+            <td>{% if entity.transactionCompleteDate %}{{ entity.transactionCompleteDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.transactionVerifyDate %}{{ entity.transactionVerifyDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.iscertificate }}</td>
+            <td>{{ entity.isproxy }}</td>
+            <td>{{ entity.isidcard }}</td>
+            <td>{{ entity.ismap }}</td>
+            <td>{{ entity.ischartlocation }}</td>
+            <td>{{ entity.ischartcapacity }}</td>
+            <td>{{ entity.ispower }}</td>
+            <td>{{ entity.islatlong }}</td>
+            <td>{{ entity.islicense }}</td>
+            <td>{{ entity.id }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('transaction_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('transaction_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('transaction_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

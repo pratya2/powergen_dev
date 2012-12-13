@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="power\genBundle\Entity\Transaction" table="transaction">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="powerhouseId" type="bigint" column="powerhouse_id" nullable="true"/>
+    <field name="transactionDate" type="date" column="transaction_date" nullable="true"/>
+    <field name="businessType" type="string" column="business_type" length="255" nullable="true"/>
+    <field name="transactionCompleteDate" type="date" column="transaction_complete_date" nullable="true"/>
+    <field name="transactionVerifyDate" type="date" column="transaction_verify_date" nullable="true"/>
+    <field name="iscertificate" type="boolean" column="isCertificate" nullable="true"/>
+    <field name="isproxy" type="boolean" column="isProxy" nullable="true"/>
+    <field name="isidcard" type="boolean" column="isIDCard" nullable="true"/>
+    <field name="ismap" type="boolean" column="isMap" nullable="true"/>
+    <field name="ischartlocation" type="boolean" column="isChartLocation" nullable="true"/>
+    <field name="ischartcapacity" type="boolean" column="isChartCapacity" nullable="true"/>
+    <field name="ispower" type="boolean" column="isPower" nullable="true"/>
+    <field name="islatlong" type="boolean" column="isLatLong" nullable="true"/>
+    <field name="islicense" type="boolean" column="isLicense" nullable="true"/>
+    
+    <many-to-one field="establishment" target-entity="Establishment" inversed-by="transactions">
+       <join-column name="establishment_id" referenced-column-name="id" />
+    </many-to-one>
+    
+  </entity>
+</doctrine-mapping>

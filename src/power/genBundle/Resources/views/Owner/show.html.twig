@@ -1,0 +1,117 @@
+<h1>Owner</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Registerdate</th>
+            <td>{{ entity.registerDate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Registernumber</th>
+            <td>{{ entity.registerNumber }}</td>
+        </tr>
+        <tr>
+            <th>Birthday</th>
+            <td>{{ entity.birthDay|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ entity.nationality }}</td>
+        </tr>
+        <tr>
+            <th>Idcard</th>
+            <td>{{ entity.idCard }}</td>
+        </tr>
+        <tr>
+            <th>Districtofissue</th>
+            <td>{{ entity.districtOfIssue }}</td>
+        </tr>
+        <tr>
+            <th>Proviceofissue</th>
+            <td>{{ entity.proviceOfIssue }}</td>
+        </tr>
+        <tr>
+            <th>Adressnumber</th>
+            <td>{{ entity.adressNumber }}</td>
+        </tr>
+        <tr>
+            <th>Lane</th>
+            <td>{{ entity.lane }}</td>
+        </tr>
+        <tr>
+            <th>Street</th>
+            <td>{{ entity.street }}</td>
+        </tr>
+        <tr>
+            <th>Villagenumber</th>
+            <td>{{ entity.villageNumber }}</td>
+        </tr>
+        <tr>
+            <th>Subdistrict</th>
+            <td>{{ entity.subDistrict }}</td>
+        </tr>
+        <tr>
+            <th>District</th>
+            <td>{{ entity.district }}</td>
+        </tr>
+        <tr>
+            <th>Province</th>
+            <td>{{ entity.province }}</td>
+        </tr>
+        <tr>
+            <th>Poscode</th>
+            <td>{{ entity.poscode }}</td>
+        </tr>
+        <tr>
+            <th>Telnumber</th>
+            <td>{{ entity.telNumber }}</td>
+        </tr>
+        <tr>
+            <th>Faxnumber</th>
+            <td>{{ entity.faxNumber }}</td>
+        </tr>
+        <tr>
+            <th>Iscorp</th>
+            <td>{{ entity.iscorp }}</td>
+        </tr>
+        <tr>
+            <th>Mobilephone</th>
+            <td>{{ entity.mobilePhone }}</td>
+        </tr>
+        <tr>
+            <th>Website</th>
+            <td>{{ entity.website }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('owner') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('owner_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('owner_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

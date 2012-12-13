@@ -1,0 +1,30 @@
+transaction:
+    pattern:  /
+    defaults: { _controller: "powergenBundle:Transaction:index" }
+
+transaction_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "powergenBundle:Transaction:show" }
+
+transaction_new:
+    pattern:  /new
+    defaults: { _controller: "powergenBundle:Transaction:new" }
+
+transaction_create:
+    pattern:  /create
+    defaults: { _controller: "powergenBundle:Transaction:create" }
+    requirements: { _method: post }
+
+transaction_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "powergenBundle:Transaction:edit" }
+
+transaction_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "powergenBundle:Transaction:update" }
+    requirements: { _method: post }
+
+transaction_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "powergenBundle:Transaction:delete" }
+    requirements: { _method: post }
